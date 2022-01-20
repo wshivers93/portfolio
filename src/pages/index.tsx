@@ -20,11 +20,7 @@ const Home: NextPage = () => {
         </Head>
 
         <main className={styles.main}>
-          Main Content Here
-
-          <div>
-            Theme: {useSelector(selectTheme)};
-          </div>
+          content
         </main>
 
         <footer className={styles.footer}>
