@@ -8,6 +8,10 @@ import { Component } from 'react'
 import App from 'next/app'
 import { Provider, useSelector } from 'react-redux'
 import store from '../app/store'
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 library.add(fab)
 config.autoAddCss = false

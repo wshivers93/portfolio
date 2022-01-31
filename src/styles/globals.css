@@ -32,3 +32,8 @@ li {
   --background: white;
   --text-primary: black;
 }
+
+.app {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
