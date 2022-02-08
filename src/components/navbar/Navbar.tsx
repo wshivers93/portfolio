@@ -8,8 +8,10 @@ import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
+import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography'
 import Menu from '@mui/material/Menu'
+import Switch from '@mui/material/Switch'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
@@ -73,19 +75,19 @@ function Navbar() {
     // )
   
     return (
-        <AppBar position="static" color='inherit' bgcolor='inherit'>
+        <AppBar position="static" sx={{bgcolor: "inherit"}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },justifyContent: 'space-between', alignItems: 'center' }}>
                         <IconButton
                         size="large"
                         aria-label="Mobile Menu"
                         aria-controls="menu-appbar"
                         aria-haspopup="true"
                         onClick={handleOpenNavMenu}
-                        color="inherit"
+                        color={theme === 'dark' ? "inherit" : "default"}
                         >
-                        <MenuRoundedIcon fontSize='large' />
+                        { anchorElNav ? <CloseIcon fontSize='large' /> : <MenuRoundedIcon fontSize='large' /> }
                         </IconButton>
                         <Menu
                         id="menu-appbar"
@@ -117,6 +119,11 @@ function Navbar() {
                         </Link>
                         
                         </Menu>
+                        <Switch
+                            onChange={() => theme === 'dark' ? dispatch(light()) : dispatch(dark())}
+                            inputProps={{ 'aria-label': 'controlled' }}
+                            defaultChecked 
+                        />
                     </Box>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         <Link href='/'>
