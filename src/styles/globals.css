@@ -22,18 +22,3 @@ li {
 * {
   box-sizing: border-box;
 }
-
-:root {
-    --background: #162c35;
-    --text-primary: white;
-}
-
-[data-theme='light'] {
-  --background: white;
-  --text-primary: black;
-}
-
-.app {
-  background-color: var(--background);
-  color: var(--text-primary);
-}

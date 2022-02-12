@@ -17,7 +17,7 @@ interface pageProps {
 const Home: NextPage<pageProps> = ({ data }) => {
   return (
     <>
-    <div className='app' data-theme={useSelector(selectTheme)}>
+    <div className={useSelector(selectTheme)} data-theme={useSelector(selectTheme)}>
       <NavBar />
       <Head>
         <title>Will Shivers</title>
@@ -25,7 +25,7 @@ const Home: NextPage<pageProps> = ({ data }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='h-screen'>
+      <main className='h-screen bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-50'>
         <div className="container h-full lg:space-y-4 flex flex-col justify-center items-center">
             <div className='hidden lg:block w-3/4'>
                 {/* <Image className="rounded-full" src={data.avatar_url} alt="profile image" layout='fill' priority/> */}

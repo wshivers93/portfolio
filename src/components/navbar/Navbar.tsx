@@ -36,46 +36,9 @@ function Navbar() {
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
-
-    // TODO: use MUI AppBar component?
-    
-    // return (
-    //     <header className={styles['site-header']}>
-    //         <MenuRoundedIcon fontSize='large' />
-
-    //         <nav className={styles.navbar}>
-    //             <ul>
-    //                 <li>
-    //                     <Link href='/'>
-    //                         Home
-    //                     </Link>
-    //                 </li>
-    //                 <li>
-    //                     <Link href='/aboutme'>
-    //                         About Me
-    //                     </Link>
-    //                 </li>
-    //             </ul>
-    //         </nav>
-
-    //         <div className={styles['theme-toggle']} onClick={() => theme === 'dark' ? dispatch(light()) : dispatch(dark())}>
-    //             Toggle Theme
-    //         </div>
-
-    //         <div className={styles['social-links']}>
-    //             <a href='https://github.com'>
-    //                 <FontAwesomeIcon icon={['fab', 'github']} />
-    //             </a>
-
-    //             <a href='https://linkedin.com'>
-    //                 <FontAwesomeIcon icon={['fab', 'linkedin']} />
-    //             </a>
-    //         </div>
-    //     </header>
-    // )
   
     return (
-        <AppBar position="static" sx={{bgcolor: "inherit"}}>
+        <AppBar position="static" className='bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-50'>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },justifyContent: 'space-between', alignItems: 'center' }}>
@@ -107,16 +70,20 @@ function Navbar() {
                             display: { xs: 'block', md: 'none' },
                         }}
                         >
-                        <Link href='/'>
-                            <a onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">Home</Typography>
-                            </a>
-                        </Link>
-                        <Link href='/aboutme'>
-                            <a onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">About Me</Typography>
-                            </a>
-                        </Link>
+                        <MenuItem>
+                            <Link href='/'>
+                                <a onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">Home</Typography>
+                                </a>
+                            </Link>
+                        </MenuItem>
+                        <MenuItem>
+                            <Link href='/aboutme'>
+                                <a onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">About Me</Typography>
+                                </a>
+                            </Link>
+                        </MenuItem>
                         
                         </Menu>
                         <Switch
@@ -127,11 +94,45 @@ function Navbar() {
                     </Box>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         <Link href='/'>
-                            <a onClick={handleCloseNavMenu}>Home</a>
+                            <a onClick={handleCloseNavMenu} className='mx-5 my-auto'>Home</a>
                         </Link>
                         <Link href='/aboutme'>
-                            <a onClick={handleCloseNavMenu}>About Me</a>
+                            <a onClick={handleCloseNavMenu} className='mx-5 my-auto'>About Me</a>
                         </Link>
+
+                        <Tooltip 
+                            title={theme === 'dark' ? 'Lumos' : 'Nox'} 
+                            placement='bottom' 
+                            followCursor>
+                            <Switch
+                                className='ml-auto'
+                                sx={{
+                                    '& .MuiSwitch-switchBase': {
+                                        color: '#EC4899'
+                                    },
+                                    '& .MuiSwitch-switchBase + .MuiSwitch-track': {
+                                        backgroundColor: '#94A3B8'
+                                    },
+                                    '& .MuiSwitch-switchBase.Mui-checked': {
+                                        color: '#22D3EE'
+                                    },
+                                    '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                                        backgroundColor: '#1976d2'
+                                    }
+                                }}
+                                onChange={() => theme === 'dark' ? dispatch(light()) : dispatch(dark())}
+                                inputProps={{ 'aria-label': 'controlled' }}
+                                defaultChecked 
+                            />
+                        </Tooltip>
+
+                        <a href='https://github.com' className='ml-5 my-auto text-2xl text-pink-500 dark:text-cyan-400'>
+                         <FontAwesomeIcon icon={['fab', 'github']} />
+                        </a>
+
+                        <a href='https://linkedin.com' className='ml-5 my-auto text-2xl text-pink-500 dark:text-cyan-400'>
+                            <FontAwesomeIcon icon={['fab', 'linkedin']} />
+                        </a>
                     </Box>
                 </Toolbar>
             </Container>
