@@ -87,6 +87,20 @@ function Navbar() {
                         
                         </Menu>
                         <Switch
+                            sx={{
+                                '& .MuiSwitch-switchBase': {
+                                    color: '#EC4899'
+                                },
+                                '& .MuiSwitch-switchBase + .MuiSwitch-track': {
+                                    backgroundColor: '#94A3B8'
+                                },
+                                '& .MuiSwitch-switchBase.Mui-checked': {
+                                    color: '#22D3EE'
+                                },
+                                '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+                                    backgroundColor: '#1976d2'
+                                }
+                            }}
                             onChange={() => theme === 'dark' ? dispatch(light()) : dispatch(dark())}
                             inputProps={{ 'aria-label': 'controlled' }}
                             defaultChecked 
@@ -94,16 +108,15 @@ function Navbar() {
                     </Box>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         <Link href='/'>
-                            <a onClick={handleCloseNavMenu} className='mx-5 my-auto'>Home</a>
+                            <a onClick={handleCloseNavMenu} className='mr-10 my-auto'>Home</a>
                         </Link>
                         <Link href='/aboutme'>
-                            <a onClick={handleCloseNavMenu} className='mx-5 my-auto'>About Me</a>
+                            <a onClick={handleCloseNavMenu} className='mr-10 my-auto'>About Me</a>
                         </Link>
 
                         <Tooltip 
                             title={theme === 'dark' ? 'Lumos' : 'Nox'} 
-                            placement='bottom' 
-                            followCursor>
+                            placement='bottom'>
                             <Switch
                                 className='ml-auto'
                                 sx={{
