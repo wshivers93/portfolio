@@ -1,10 +1,11 @@
+import { jsx } from '@emotion/react';
 import React from 'react'
 import styles from '../../styles/Card.module.css'
 
 interface cardProps {
-  header: string,
-  content: string,
-  headerImg: boolean,
+  header: String | JSX.Element,
+  content: String,
+  headerImg: Boolean,
 }
 
 function Card(props: cardProps) {

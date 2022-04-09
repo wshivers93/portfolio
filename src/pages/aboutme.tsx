@@ -8,13 +8,8 @@ import { selectTheme } from '../components/navbar/navThemeSlice'
 const AboutMe: NextPage = () => {
     return(
         <>
-            <div className={useSelector(selectTheme)} data-theme={useSelector(selectTheme)}>
-                <NavBar />
-                <main className='h-screen bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-50'>
-                    <div className={styles.container}>
-                        <div>About Me</div>
-                    </div>
-                </main>
+            <div className={styles.container}>
+                <div>About Me</div>
             </div>
         </>
     )

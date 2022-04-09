@@ -8,6 +8,12 @@
   width: 100%;
 }
 
+.cardImg {
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+}
+
 /* .card:before {
   content: '';
   position: absolute;

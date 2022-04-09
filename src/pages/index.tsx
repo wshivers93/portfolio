@@ -1,12 +1,22 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import NavBar from '../components/navbar/Navbar'
 import Card from '../components/card/Card'
-import { useSelector } from 'react-redux'
-import { selectTheme } from '../components/navbar/navThemeSlice'
-import { Typography } from '@mui/material'
+import {
+  DiHtml5,
+  DiCss3,
+  DiJavascript,
+  DiPython,
+  DiReact
+} from 'react-icons/di'
+import {
+  SiTailwindcss,
+  SiTypescript,
+  SiCsharp,
+  SiUnity,
+  SiNextdotjs,
+} from 'react-icons/si'
+import { keys } from '@mui/system'
 
 interface pageProps {
   data: {
@@ -23,33 +33,40 @@ interface pageProps {
 }
 
 const Home: NextPage<pageProps> = ({ data, cmsData }) => {
-  console.log('CMS', cmsData.data.attributes);
+  const techObj = {
+    html: <DiHtml5/>,
+    css: <DiCss3/>,
+    tailwind: <SiTailwindcss/>,
+    javascript: <DiJavascript/>,
+    typescript: <SiTypescript/>,
+    react: <DiReact/>,
+    nextjs: <SiNextdotjs/>,
+    python: <DiPython/>,
+    'c#': <SiCsharp/>,
+    unity: <SiUnity/>,
+  }
+
   return (
     <>
-    <div className={useSelector(selectTheme)} data-theme={useSelector(selectTheme)}>
-      <NavBar />
-      <Head>
-        <title>Will Shivers</title>
-      </Head>
-
-      <main className='h-screen bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-50'>
-        <div className="container h-full mx-auto lg:space-y-4 flex flex-col justify-center px-2 lg:px-6">
-            <div className='hidden lg:block'>
-                {/* <Image className="rounded-full" src={data.avatar_url} alt="profile image" layout='fill' priority/> */}
-            </div>
-            <div className='w-fit max-w-lg'>
-              <Card header={cmsData.data.attributes.IntroHeader} content={cmsData.data.attributes.IntroContent} headerImg={false} />
-            </div>
-            {/* <div className="w-3/4 text-left">{data.bio}</div> */}
+    <section className="container h-screen mx-auto lg:space-y-4 flex flex-col justify-center px-2 lg:px-6">
+        <div className='hidden lg:block'>
+            {/* <Image className="rounded-full" src={data.avatar_url} alt="profile image" layout='fill' priority/> */}
         </div>
-        <div className="container w-10 h-10">
-          <Card header='Test' content='Testing' headerImg={false}></Card>
+        <div className='w-fit max-w-lg'>
+          <Card header={cmsData.data.attributes.IntroHeader} content={cmsData.data.attributes.IntroContent} headerImg={false} />
         </div>
-      </main>
+    </section>
 
-      <footer className={styles.footer}>
-      </footer>
-    </div>
+    <section className="container h-screen mx-auto px-2 lg:px-6">
+      <div className="flex flex-col">
+        <div className="flex flex-row">
+          <div className='uppercase text-xl'>Tech i&apos;ve worked with:</div>
+          <div className='flex flex-row wrap'>
+            {Object.entries(techObj).map(([k, v]) => { return <Card key={k} header={v} content={k} headerImg={true} /> })}
+          </div>
+        </div>
+      </div>
+    </section>
     </>
   )
 }
