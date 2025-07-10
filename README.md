@@ -1,3 +1,5 @@
+[![Commit Check](https://github.com/commit-check/commit-check-action/actions/workflows/commit-check.yml/badge.svg)](https://github.com/commit-check/commit-check-action/actions/workflows/commit-check.yml)
+
 # Welcome to React Router!
 
 A modern, production-ready template for building full-stack React applications using React Router.
