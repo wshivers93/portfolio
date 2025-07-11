@@ -8,7 +8,7 @@
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "test": "vitest run --coverage",
-    "test:cov": "vitest run --reporter json"
+    "test:cov": "vitest run --reporter json --outputFile coverage.json"
   },
   "dependencies": {
     "@react-router/node": "^7.5.3",
