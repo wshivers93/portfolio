@@ -1,5 +1,5 @@
 [![Commit Check](https://github.com/wshivers93/portfolio/actions/workflows/commit-check.yml/badge.svg)](https://github.com/wshivers93/portfolio/actions/workflows/commit-check.yml) 
-[![CodeQL Advanced](https://github.com/wshivers93/portfolio/actions/workflows/codeql.yml/badge.svg)](https://github.com/wshivers93/portfolio/actions/workflows/codeql.yml)
+[![CodeQL Advanced](https://github.com/wshivers93/portfolio/actions/workflows/codeql.yml/badge.svg)](https://github.com/wshivers93/portfolio/actions/workflows/codeql.yml) [![cov](https://wshivers93.github.io/portfolio/badges/coverage.svg)](https://github.com/wshivers93/portfolio/actions).
 
 # Welcome to React Router!
 
