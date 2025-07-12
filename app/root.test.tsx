@@ -1,6 +1,7 @@
-import { render, screen, waitFor } from '@testing-library/react';
-import { describe, it, expect, vi } from 'vitest';
-import { createRoutesStub, type ErrorResponse } from 'react-router';
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
+import { createRoutesStub } from 'react-router';
 import { ErrorBoundary } from './root';
 import { beforeEach } from 'node:test';
 
@@ -24,13 +25,18 @@ describe("App root", () => {
         {
           path: "/",
           Component: MockComponent,
-          ErrorBoundary: ErrorBoundary as any
+          ErrorBoundary: ({ error }) => (<ErrorBoundary params="" error={error} />)
         },
       ]);
-      render(<Stub initialEntries={["/"]} />);
+      render(
+        <Stub initialEntries={["/"]} />
+      );
 
-      await waitFor(() => screen.findByText(mockErrorMsg));
-      await waitFor(() => screen.findByText("Oops!"));
+      const errorMsg = await screen.findByText(mockErrorMsg);
+      const errorHeader = await screen.findByText("Oops!");
+
+      expect(errorMsg).toBeDefined();
+      expect(errorHeader).toBeDefined();
     });
 
     it("captures 404 errors", async () => {
@@ -38,13 +44,16 @@ describe("App root", () => {
         {
           path: "/",
           Component: Mock404Component,
-          ErrorBoundary: ErrorBoundary as any,
+          ErrorBoundary: ({ error }) => (<ErrorBoundary params="" error={error} />)
         }
       ]);
       render(<Stub initialEntries={["/bad/route"]} />);
 
-      await waitFor(() => screen.findByText("The requested page could not be found."));
-      await waitFor(() => screen.findByText("404"));
+      const errorMsg = await screen.findByText("The requested page could not be found.");
+      const errorStatus = await screen.findByText("404");
+
+      expect(errorMsg).toBeDefined();
+      expect(errorStatus).toBeDefined();
     });
   });
 });

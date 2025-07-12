@@ -1,3 +1,5 @@
+import React from 'react';
+
 // TODO: store links in a central config
 export function TopNav() {
 	return (

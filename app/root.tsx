@@ -1,3 +1,5 @@
+import type { Route } from "./+types/root";
+
 import {
   isRouteErrorResponse,
   Links,
@@ -6,8 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
-import type { Route } from "./+types/root";
+import React from 'react';
 import "./app.css";
 import { TopNav } from "./components/navigation/TopNav";
 
