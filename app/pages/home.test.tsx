@@ -6,6 +6,6 @@ describe('Home page', () => {
   it('renders', async () => {
     render(<Home />);
 
-    await waitFor(() => screen.findByText("TEST"));
+    await waitFor(() => screen.findByText("HOME PAGE"));
   });
 });

@@ -11,6 +11,7 @@ export default defineConfig({
     coverage: {
       exclude: [
         '**/*.config.*',
+        'build/',
         ...coverageConfigDefaults.exclude
       ]
     }
