@@ -8,7 +8,7 @@ export function TopNav() {
 				<a href="https://github.com/wshivers93">
 					<i className="fa-brands fa-github fa-xl"></i>
 				</a>
-				<a href="www.linkedin.com/in/william-shivers-0a133461">
+				<a href="https://www.linkedin.com/in/william-shivers-0a133461">
 					<i className="fa-brands fa-linkedin fa-xl"></i>
 				</a>
 			</div>
