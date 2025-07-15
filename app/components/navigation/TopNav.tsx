@@ -1,6 +1,5 @@
 import React from 'react';
 
-// TODO: store links in a central config
 export function TopNav() {
 	return (
 		<nav className="flex flex-row justify-between p-8 border-b">

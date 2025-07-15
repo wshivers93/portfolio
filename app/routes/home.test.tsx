@@ -1,8 +1,9 @@
 import type { Route } from "./+types/home";
 
+import React from 'react';
 import { describe, expect, it, vi } from "vitest";
 import HomeRoute, { meta } from "./home";
-import { render, waitFor, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 describe("Home route", () => {
   describe("Home component", () => {
@@ -14,7 +15,9 @@ describe("Home route", () => {
     it("Renders home component", async () => {
       render(<HomeRoute />);
 
-      await waitFor(() => screen.findByTestId(mockHomeTestId));
+      const component = await screen.findByTestId(mockHomeTestId);
+
+      expect(component).toBeDefined();
     });
   });
 

@@ -5,6 +5,10 @@ import { createRoutesStub } from 'react-router';
 import { ErrorBoundary } from './root';
 import { beforeEach } from 'node:test';
 
+type MockError = {
+  error: unknown;
+};
+
 describe("App root", () => {
   describe("Error Boundary", () => {
     const mockErrorMsg = "mock error";
@@ -25,7 +29,7 @@ describe("App root", () => {
         {
           path: "/",
           Component: MockComponent,
-          ErrorBoundary: ({ error }) => (<ErrorBoundary params="" error={error} />)
+          ErrorBoundary: ({ error }: MockError) => (<ErrorBoundary params="" error={error} />)
         },
       ]);
       render(
@@ -44,7 +48,7 @@ describe("App root", () => {
         {
           path: "/",
           Component: Mock404Component,
-          ErrorBoundary: ({ error }) => (<ErrorBoundary params="" error={error} />)
+          ErrorBoundary: ({ error }: MockError) => (<ErrorBoundary params="" error={error} />)
         }
       ]);
       render(<Stub initialEntries={["/bad/route"]} />);
