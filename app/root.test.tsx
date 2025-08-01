@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it, vi, beforeEach } from 'vitest';
 import { createRoutesStub } from 'react-router';
 import { ErrorBoundary } from './root';
-import { beforeEach } from 'node:test';
+import { axe } from "vitest-axe";
 
 type MockError = {
   error: unknown;
@@ -58,6 +58,19 @@ describe("App root", () => {
 
       expect(errorMsg).toBeDefined();
       expect(errorStatus).toBeDefined();
+    });
+
+    it("is accessible", async () => {
+      const Stub = createRoutesStub([
+        {
+          path: "/",
+          Component: Mock404Component,
+          ErrorBoundary: ({ error }: MockError) => (<ErrorBoundary params="" error={error} />)
+        }
+      ]);
+      const { container } = render(<Stub initialEntries={["/bad/route"]} />);
+
+      expect(await axe(container)).toHaveNoViolations();
     });
   });
 });
