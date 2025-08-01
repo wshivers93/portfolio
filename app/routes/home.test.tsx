@@ -4,6 +4,7 @@ import React from 'react';
 import { describe, expect, it, vi } from "vitest";
 import HomeRoute, { meta } from "./home";
 import { render, screen } from "@testing-library/react";
+import { axe } from "vitest-axe";
 
 describe("Home route", () => {
   describe("Home component", () => {
@@ -18,6 +19,12 @@ describe("Home route", () => {
       const component = await screen.findByTestId(mockHomeTestId);
 
       expect(component).toBeDefined();
+    });
+
+    it("is accessible", async () => {
+      const { container } = render(<HomeRoute />);
+
+      expect(await axe(container)).toHaveNoViolations();
     });
   });
 
