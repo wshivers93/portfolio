@@ -8,7 +8,7 @@ describe('Home page', () => {
   it('renders', async () => {
     render(<Home />);
 
-    const title = await screen.findByText("HOME PAGE");
+    const title = await screen.findByText("Hi, my name is Will");
 
     expect(title).toBeDefined();
   });

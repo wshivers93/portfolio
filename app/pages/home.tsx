@@ -12,10 +12,10 @@ export function Home() {
         headerBorder={false}
       >
         <div className="flex flex-row gap-4">
-          <a href="https://github.com/wshivers93">
+          <a href="https://github.com/wshivers93" aria-label='github profile'>
             <i className="fa-brands fa-github fa-xl"></i>
           </a>
-          <a href="https://www.linkedin.com/in/william-shivers-0a133461">
+          <a href="https://www.linkedin.com/in/william-shivers-0a133461" aria-label='linkedin profile'>
             <i className="fa-brands fa-linkedin fa-xl"></i>
           </a>
         </div>
