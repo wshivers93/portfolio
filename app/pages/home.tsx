@@ -27,7 +27,10 @@ export function Home() {
         }
       >
         <p>
-          I am a software engineer with a passion for solving complex problems. Professionally I currently work mostly with React and TypeScript, but I'm always eager to learn new technologies and improve my skills. In my free time, I enjoy too many things. Exploring new programming languages, reading, gaming, working out, and spending time with my wife and two kids.
+          I am a software developer with a passion for solving complex problems. For most of my career I have worked with React and TypeScript, but I'm always eager to learn new technologies and broaden my skills.
+        </p>
+        <p>
+          In my free time, I enjoy far too many things. Exploring new programming languages, reading, gaming, working out, and spending time with my wife and two kids.
         </p>
       </Section>
 
@@ -47,7 +50,7 @@ export function Home() {
         headerBorder={false}
       >
         <p>
-          My first job was at Wellhub (formerly Gympass) where I started as the IT guy. I had always wanted to be a software engineer, but had not had any luck finding a role. I didn't do an internship in college and my Github was empty, so I struggled to separate myself from all the other new graduates looking for a job. After a few frustrating months of searching for a job, I reached out to a friend who had graduated a year before me for advice. He told me at his company all entry level techies started in customer support for a year or so and then were transitioned to the role they wanted, so I should try broadening my search to other roles. I started applying to IT roles and eventually received an offer from Wellhub.
+          My first job was at Wellhub (formerly Gympass) where I started as the IT guy. I had always wanted to be a software developer, but had not had any luck finding a role. I didn't do an internship in college and my Github was empty, so I struggled to separate myself from all the other new graduates. After a few frustrating months of job hunting, I reached out to a friend who had graduated a year before me for advice. He told me at his company all new graduates started in customer support for a year or so and then were transitioned to the role they wanted. I broadened my search to other roles and eventually received an offer from Wellhub.
         </p>
         <p>
           I immediately started looking for opportunites to take on coding projects and didn't have to wait long to find one. A few months in to me running IT for the US branch of this company (yeah I wasn't qualified for that but we figured it out) the head of operations wanted a dashboard that could be displayed on TV's around the office for the sales team to reference.
