@@ -50,13 +50,43 @@ export function Home() {
         headerBorder={false}
       >
         <p>
-          My first job was at Wellhub (formerly Gympass) where I started as the IT guy. I had always wanted to be a software developer, but had not had any luck finding a role. I didn't do an internship in college and my Github was empty, so I struggled to separate myself from all the other new graduates. After a few frustrating months of job hunting, I reached out to a friend who had graduated a year before me for advice. He told me at his company all new graduates started in customer support for a year or so and then were transitioned to the role they wanted. I broadened my search to other roles and eventually received an offer from Wellhub.
+          My first job was at Wellhub(formerly Gympass) where I started as the IT guy.I had always wanted to be a software developer, but had not had any luck finding a role.I didn't do an internship in college and my Github was empty, so I struggled to separate myself from all the other new graduates. After a few frustrating months of job hunting, I reached out to a friend who had graduated a year before me for advice. He told me at his company all new graduates started in customer support for a year or so and then were transitioned to the role they wanted. I broadened my search to other roles and eventually received an offer from Wellhub.
+        </p >
+        <p>
+          I immediately started looking for opportunites to take on coding projects whenever I had time. I built a simple dashboard using Python and Django to display sales stats around the office. I also built a Python script to automate the onboarding process for new customers. These two projects caught the attention of the analytics team and I was able to transition to a role as a data analyst. I continued writing Python scripts to automate data processing and reports. Once COVID hit, I was laid off along with the rest of the analytics team.
+        </p>
+      </Section >
+
+      <Section
+        header={
+          <>
+            <h3>Ledge</h3>
+            <p>September 2020 - May 2022</p>
+          </>
+        }
+        headerBorder={false}
+      >
+        <p>
+          I spent unemployment learning and working on side projects and eventually landed a job at Ledge. They had a Wordpress website they wanted to customize and eventually migrate to a React app. For most of my time there I was the only developer and delivered many new features using PHP and JavaScript. I built custom pages in order include umbrellas on the site. At the time we used a Wordpress plugin to manage products, however the umbrellas had so many customizations that the plugin could not handle them.
         </p>
         <p>
-          I immediately started looking for opportunites to take on coding projects and didn't have to wait long to find one. A few months in to me running IT for the US branch of this company (yeah I wasn't qualified for that but we figured it out) the head of operations wanted a dashboard that could be displayed on TV's around the office for the sales team to reference.
+          A few months before I left, another developer was hired and we started designing and building a POC for the migration to React.
         </p>
       </Section>
-    </article>
+
+      <Section
+        header={
+          <>
+            <h3>Amazon Web Services (AWS)</h3>
+            <p>May 2022 - Present</p>
+          </>
+        }
+        headerBorder={false}
+      >
+
+      </Section>
+
+    </article >
   );
 }
 
