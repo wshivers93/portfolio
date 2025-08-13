@@ -67,10 +67,16 @@ export function Home() {
         headerBorder={false}
       >
         <p>
-          I spent unemployment learning and working on side projects and eventually landed a job at Ledge. They had a Wordpress website they wanted to customize and eventually migrate to a React app. For most of my time there I was the only developer and delivered many new features using PHP and JavaScript. I built custom pages in order include umbrellas on the site. At the time we used a Wordpress plugin to manage products, however the umbrellas had so many customizations that the plugin could not handle them.
+          I spent unemployment learning and working on side projects and eventually landed a job at Ledge. They had a Wordpress website they wanted to customize and eventually migrate to a React app. For most of my time at Ledge I was the only developer. I worked closely with Marketing, Sales, and many executives to deliver many new features using PHP and JavaScript
         </p>
         <p>
-          A few months before I left, another developer was hired and we started designing and building a POC for the migration to React.
+          I built custom pages in order include umbrellas on the site. At the time we used a Wordpress plugin to manage products, however the umbrellas had so many customizations that the plugin could not handle them. So I integrated directly with the e-commerce platform's APIs to retrieve the data I needed to display the products on the site. I also wrote lot's of Javascript to handle customer interactions with the page, product customization selections, and cart actions.
+        </p>
+        <p>
+          Another major feature I worked on was the ability for customers to add complimentary products to their cart without having to navigate away from the product they were currently viewing. For example, if a customer was viewing a chair for their pool they could also add a table or pillows for that chair to their cart. This change resulted in an increase in our products per transaction metric (from ~1.2 to ~1.5).
+        </p>
+        <p>
+          A few months before I left, another developer was hired and we started designing and building a POC for the migration to React. Unfortunately this project always got pushed back in favor of new features or last minute requests so we never had the chance to implement this change.
         </p>
       </Section>
 
@@ -85,7 +91,6 @@ export function Home() {
       >
 
       </Section>
-
     </article >
   );
 }
