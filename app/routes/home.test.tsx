@@ -1,6 +1,6 @@
 import type { Route } from "./+types/home";
 
-import React from 'react';
+import React from "react";
 import { describe, expect, it, vi } from "vitest";
 import HomeRoute, { meta } from "./home";
 import { render, screen } from "@testing-library/react";

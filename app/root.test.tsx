@@ -1,8 +1,8 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { describe, expect, it, vi, beforeEach } from 'vitest';
-import { createRoutesStub } from 'react-router';
-import { ErrorBoundary } from './root';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it, vi, beforeEach } from "vitest";
+import { createRoutesStub } from "react-router";
+import { ErrorBoundary } from "./root";
 import { axe } from "vitest-axe";
 
 type MockError = {
@@ -16,7 +16,7 @@ describe("App root", () => {
       throw new Error(mockErrorMsg);
     };
     const Mock404Component = () => {
-      return (<div>Mock404Component</div>);
+      return <div>Mock404Component</div>;
     };
 
     beforeEach(() => {
@@ -29,12 +29,10 @@ describe("App root", () => {
         {
           path: "/",
           Component: MockComponent,
-          ErrorBoundary: ({ error }: MockError) => (<ErrorBoundary params="" error={error} />)
+          ErrorBoundary: ({ error }: MockError) => <ErrorBoundary params="" error={error} />,
         },
       ]);
-      render(
-        <Stub initialEntries={["/"]} />
-      );
+      render(<Stub initialEntries={["/"]} />);
 
       const errorMsg = await screen.findByText(mockErrorMsg);
       const errorHeader = await screen.findByText("Oops!");
@@ -48,8 +46,8 @@ describe("App root", () => {
         {
           path: "/",
           Component: Mock404Component,
-          ErrorBoundary: ({ error }: MockError) => (<ErrorBoundary params="" error={error} />)
-        }
+          ErrorBoundary: ({ error }: MockError) => <ErrorBoundary params="" error={error} />,
+        },
       ]);
       render(<Stub initialEntries={["/bad/route"]} />);
 
@@ -65,8 +63,8 @@ describe("App root", () => {
         {
           path: "/",
           Component: Mock404Component,
-          ErrorBoundary: ({ error }: MockError) => (<ErrorBoundary params="" error={error} />)
-        }
+          ErrorBoundary: ({ error }: MockError) => <ErrorBoundary params="" error={error} />,
+        },
       ]);
       const { container } = render(<Stub initialEntries={["/bad/route"]} />);
 

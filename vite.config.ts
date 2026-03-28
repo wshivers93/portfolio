@@ -7,14 +7,10 @@ import { coverageConfigDefaults } from "vitest/config";
 export default defineConfig({
   plugins: [tailwindcss(), !process.env.VITEST && reactRouter(), tsconfigPaths()],
   test: {
-    environment: 'jsdom',
+    environment: "jsdom",
     coverage: {
-      exclude: [
-        '**/*.config.*',
-        'build/',
-        ...coverageConfigDefaults.exclude
-      ]
+      exclude: ["**/*.config.*", "build/", ...coverageConfigDefaults.exclude],
     },
-    setupFiles: ['vitest.setup.ts'],
-  }
+    setupFiles: ["vitest.setup.ts"],
+  },
 });
